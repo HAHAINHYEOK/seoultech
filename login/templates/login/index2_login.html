@@ -1,0 +1,26 @@
+{% extends 'login/base.html' %}
+{% block content %}
+<form class="form-horizontal" style="padding-left:8vw" method="post">
+  {% csrf_token %}
+
+  <div class="">
+    {{ form.username.errors}}
+    <label for="username" class="col-sm-3 control-label" >사용자 이름</label>
+    {{ form.username}}
+  </div>
+
+  <div class="">
+    {{ form.password.errors}}
+    <label for="password" class="col-sm-3 control-label" type="password">패스 워드</label>
+    {{ form.password }}
+
+  </div>
+  <br>
+  <div class="col-sm-offset-3 col-sm-10">
+    <button type="submit" class="btn btn-default" name="button">로그인</button>
+    <button type="button" class="btn btn-default" onclick = "location.href = '/signup'" >회원가입</button>
+  </div>
+
+</form>
+
+{% endblock%}
